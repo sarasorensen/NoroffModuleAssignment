@@ -1,0 +1,85 @@
+body {
+  background-color: $beige;
+  width: 100%;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.panel {
+  background: white;
+  padding: $space;
+  margin: auto;
+  margin-bottom: $space;
+  width: 80%;
+  &[aria-hidden="true"] {
+    display: none;
+  }
+  &[aria-hidden="false"] {
+    display: block;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.space {
+  display: inline-block;
+  padding: $space-s;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+.wrap-btns {
+  @include flexRow;
+  margin-top: $space;
+  margin-bottom: $space;
+  @include breakpoint(medium) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn {
+  width: 25%;
+  background-color: $purple;
+  color: white;
+  border-radius: 15px;
+  padding: $space-s;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  margin-right: $space-s;
+  margin-left: $space-s;
+  &__neutral {
+    background-color: transparent;
+    border: 1px solid $purple;
+    color: $purple;
+    &:hover:not([disabled]) {
+      color: $purple !important;
+    }
+  }
+  &:hover:not([disabled]) {
+    @include hover;
+    color: white;
+    text-decoration: none;
+  }
+  @include breakpoint(medium) {
+    width: 50%;
+    margin-bottom: $space-s;
+  }
+}
+hr {
+  color: $light-purple;
+  opacity: 0.4;
+}

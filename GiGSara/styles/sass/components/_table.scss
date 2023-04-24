@@ -1,0 +1,86 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-x: auto;
+  & td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+  }
+  & tr th {
+    text-transform: uppercase;
+    text-align: left;
+    color: $purple;
+    cursor: default !important;
+  }
+  & tr:nth-child(even) {
+    background-color: $light-purple;
+  }
+  & i {
+    font-size: 25px !important;
+    margin-left: $space-s;
+    color: $purple;
+    &:hover {
+      @include hover;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  tr th {
+    display: none;
+  }
+
+  tr td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    font-weight: 900;
+    content: "Name";
+  }
+  td:nth-of-type(2):before {
+    font-weight: 900;
+    content: "Last Name";
+  }
+  td:nth-of-type(3):before {
+    font-weight: 900;
+    content: "E-mail";
+  }
+  td:nth-of-type(4):before {
+    font-weight: 900;
+    content: "Country";
+  }
+}
+
+.disableHover {
+  cursor: default;
+  & td {
+    cursor: default;
+  }
+}

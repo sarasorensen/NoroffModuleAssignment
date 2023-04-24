@@ -1,0 +1,84 @@
+.input-group {
+  display: flex;
+  flex-direction: column-reverse;
+  & input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: $space-s;
+    padding: $space-s;
+    border: none;
+    border-bottom: 1.5px solid $light-grey;
+    &:focus {
+      outline: none;
+      border-bottom: 1.5px solid $purple;
+      color: $purple;
+    }
+    &:focus + label {
+      color: $purple;
+    }
+  }
+  & select {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: $space-s;
+    padding: $space-s;
+    border: none;
+    border: 1.5px solid $light-grey;
+    &:focus {
+      outline: none;
+      border: 1.5px solid $purple;
+    }
+  }
+}
+label {
+  text-transform: initial;
+  color: $grey;
+  margin-bottom: $space-s;
+}
+
+.nav {
+  width: 90%;
+  max-width: 30em;
+  text-align: center;
+  margin: auto;
+  li {
+    list-style: none;
+    display: inline-block;
+    background: rgba(256, 256, 256, 0.5);
+    padding: $space-s;
+    margin: 0 0.1em;
+    &[aria-selected="true"] {
+      background-color: rgba(256, 256, 256, 0.95);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  color: $purple;
+  border-bottom: 1px solid $purple;
+}
+
+#toggle1 {
+  display: block;
+}
+#toggle2 {
+  display: none;
+}
+#toggle3 {
+  display: none;
+}
+#loaderForm {
+  margin-top: $space;
+}
+.warning {
+  color: red;
+  margin-top: $space-s;
+}
+.success {
+  color: green;
+}
